@@ -1,4 +1,4 @@
-// import { Delays, greeter } from '../src/main';
+import Main from '../src/main';
 
 // describe('greeter function', () => {return;
 //   // Read more about fake timers
@@ -29,3 +29,21 @@
 //     expect(hello).toBe(`Hello, ${name}`);
 //   });
 // });
+
+describe('main class', () => {
+    it('sets clocks', () => {
+        const main = new Main();
+
+        main.setClocks();
+
+        expect(main.publisher.getSubscribers()).toHaveLength(4);
+    });
+
+    it('display clocks', () => {
+        const main = new Main();
+        main.publisher.update = jest.fn();
+        main.displayClocks();
+
+        expect(main.publisher.update).toBeCalled();
+    });
+})

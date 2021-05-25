@@ -29,6 +29,7 @@ describe('publisher class', () => {
         const clock = {} as SubscriberInterface;
 
         const publisher = new Publisher();
+        clock.displayNowDate = jest.fn();
         publisher.addSubscriber(clock);
         publisher.update();
         expect(clock.displayNowDate).toBeCalled();

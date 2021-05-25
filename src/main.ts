@@ -23,19 +23,13 @@ class Main {
     this.publisher.addSubscriber(clockSydney);
   }
 
-  displayClocks(numberOfSeconds: number) {
-    if (numberOfSeconds < 1) {
-      return;
-    }
-
-    // Display clocks
+  displayClocks() {
     this.publisher.update();
-    numberOfSeconds--
-
-    setTimeout(() => this.displayClocks(numberOfSeconds), 1000);
   }
 }
 
 const main = new Main();
 main.setClocks();
-main.displayClocks(5);
+// main.displayClocks();
+
+export default Main;
