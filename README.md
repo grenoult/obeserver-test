@@ -28,7 +28,7 @@ Subscribers may belong to a publisher and will contain logic for the subscriber 
 
 ## Thoughts
 * Observer pattern is great if we want a design where we can have a mechanism for objects (Subscribers) to "wait" to be called, and then be called (by the Publisher) only when necessary.
-* A great example would be a notification:
-  * Publisher would be sending notifications,
+* A great example would be a notification system:
+  * Publisher would be sending notifications by calling subscribers,
   * Subscribers would implement the same interface and can be: email, SMS, Slack message, etc.
   * the main program would call the Publisher to either add messages (Subscribers) or trigger notifications based on type (email, SMS, etc).
