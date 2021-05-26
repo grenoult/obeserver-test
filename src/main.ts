@@ -30,6 +30,6 @@ class Main {
 
 const main = new Main();
 main.setClocks();
-// main.displayClocks();
+main.displayClocks();
 
 export default Main;
